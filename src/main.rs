@@ -16,11 +16,12 @@ async fn main() {
     let mut y_u;
     let mut x_u;
     let mut state;
-    let mut n_c;
+    let mut n;
     let mut simulate = false;
+    let mut ng;
     loop {
         let now = Instant::now();
-        let mut ng = grid();
+        ng = grid();
         let background = Color::from_hex(0x0f0f0f);
         clear_background(background);
         if is_mouse_button_down(MouseButton::Left) {
@@ -51,74 +52,32 @@ async fn main() {
                 y_u = y as usize;
                 x_u = x as usize;
                 state = g[y_u][x_u];
+                // Checking if the cell is on the edge so the neighbor function doesn't check cell's that don't exist
                 if y == h_i-1 || x == w_i-1 || y == 0 || x == 0 {
 
                 } else if state == 1 {
                     draw_rectangle((x as f32)*STEP, (y as f32)*STEP, STEP, STEP, GREEN);
                     if simulate {
-                        n_c = 0;
-                        if g[y_u-1][x_u-1] == 1 {
-                            n_c += 1;
-                        }
-                        if g[y_u-1][x_u] == 1 {
-                            n_c += 1;
-                        }
-                        if g[y_u-1][x_u+1] == 1 {
-                            n_c += 1;
-                        }
-                        if g[y_u][x_u-1] == 1 {
-                            n_c += 1;
-                        }
-                        if g[y_u][x_u+1] == 1 {
-                            n_c += 1;
-                        }
-                        if g[y_u+1][x_u-1] == 1 {
-                            n_c += 1;
-                        }
-                        if g[y_u+1][x_u] == 1 {
-                            n_c += 1;
-                        }
-                        if g[y_u+1][x_u+1] == 1 {
-                            n_c += 1;
-                        }
+                        // Number of neighbors to cell
+                        n = neighbors(&g, x_u, y_u);
 
-                        if n_c < 2 {
+                        // Updating so they obey the rules
+                        if n < 2 {
                             ng[y_u][x_u] = 0;
                         }
-                        if n_c > 3 {
+                        if n > 3 {
                             ng[y_u][x_u] = 0;
                         }
-                        if n_c == 2 || n_c == 3 {
+                        if n == 2 || n == 3 {
                             ng[y_u][x_u] = 1;
                         }
                     }
                 } else if simulate {
-                    n_c = 0;
-                    if g[y_u-1][x_u-1] == 1 {
-                        n_c += 1;
-                    }
-                    if g[y_u-1][x_u] == 1 {
-                        n_c += 1;
-                    }
-                    if g[y_u-1][x_u+1] == 1 {
-                        n_c += 1;
-                    }
-                    if g[y_u][x_u-1] == 1 {
-                        n_c += 1;
-                    }
-                    if g[y_u][x_u+1] == 1 {
-                        n_c += 1;
-                    }
-                    if g[y_u+1][x_u-1] == 1 {
-                        n_c += 1;
-                    }
-                    if g[y_u+1][x_u] == 1 {
-                        n_c += 1;
-                    }
-                    if g[y_u+1][x_u+1] == 1 {
-                        n_c += 1;
-                    }
-                    if n_c == 3 {
+                    // Number of neighbors to cell
+                    n = neighbors(&g, x_u, y_u);
+
+                    // Updating so they obey the rules
+                    if n == 3 {
                         ng[y_u][x_u] = 1;
                     }
                 }
@@ -135,6 +94,19 @@ fn grid() -> Vec<Vec<i32>> {
     let x_values = vec![0i32; (screen_width()/STEP) as usize];
     let y_values = vec![x_values.clone(); (screen_height()/STEP) as usize];
     return y_values;
+}
+
+fn neighbors(g: &Vec<Vec<i32>>, x: usize, y: usize) -> i32 {
+    let mut n_c: i32 = 0;
+    n_c += g[y-1][x-1];
+    n_c += g[y-1][x  ];
+    n_c += g[y-1][x+1];
+    n_c += g[y+1][x-1];
+    n_c += g[y+1][x]  ;
+    n_c += g[y+1][x+1];
+    n_c += g[y  ][x-1];
+    n_c += g[y  ][x+1];
+    return n_c;
 }
 
 fn window_conf() -> Conf {
