@@ -16,7 +16,7 @@ The game of life takes place in an infinite two dimensional grid of cells. Howev
 </p>
 Rules:
 
-- if the cell is live and has < 2 live neighbors it dies
-- if the cell is live and has exactly 2 or 3 live neighbors it lives
-- if the cell is live and has more than 3 neighbors it dies
-- if the cell is dead and has exactly 3 neighbors it becomes live
+- if the cell is alive and has < 2 live neighbors it dies
+- if the cell is alive and has exactly 2 or 3 live neighbors it lives
+- if the cell is alive and has more than 3 neighbors it dies
+- if the cell is dead and has exactly 3 neighbors it becomes alive
