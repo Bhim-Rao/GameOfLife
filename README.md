@@ -2,6 +2,6 @@
 A rust implementation of Conway's game of life using macroquad
 ## Instructions
 Clone the Repo and then run:
-> `cargo build`
+> ```cargo build```
 and
-> `cargo run`
+> sh```cargo run```
