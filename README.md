@@ -7,7 +7,7 @@ cargo build
 cargo run
 ```
 ## Usage Instructions
-Click or drag with your mouse to turn on or "populate" cell's and press space to start or pause the simulation. Right clicking on a cell turns it off.
+Click or drag with your mouse to turn on or "populate" cell's and press space to start or pause the simulation. Right clicking on a cell "unpopulates" it.
 
 ## Game of life algorithm
 The game of life takes place in an infinite two dimensional grid of cells. However in this implementation the grid is finite. A cell can be alive or dead which can also be called populated and unpopulated. every cell relates to 8 of it's direct neighbors.
