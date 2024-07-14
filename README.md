@@ -11,4 +11,4 @@ Click or drag with your mouse to turn on or "populate" cell's and press space to
 
 ## Game of life algorithm
 The game of life takes place in an infinite two dimensional grid of cells. However in this implementation the grid is finitely large. every cell relates to 8 of it's direct neighbors
-<img src="grid.png" alt="drawing" width="200"/>
+<img src="grid.png" alt="drawing" width="200" text-align="center"/>
