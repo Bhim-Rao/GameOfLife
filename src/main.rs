@@ -16,10 +16,6 @@ async fn main() {
     let mut y_u;
     let mut x_u;
     let mut state;
-    // let mut dir;
-    // let mut below;
-    // let mut b_d;
-    // let mut a_d;
     let mut n_c;
     let mut simulate = false;
     loop {
