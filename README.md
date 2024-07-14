@@ -10,7 +10,7 @@ cargo run
 Click or drag with your mouse to turn on or "populate" cell's and press space to start or pause the simulation. Right clicking on a cell turns it off.
 
 ## Game of life algorithm
-The game of life takes place in an infinite two dimensional grid of cells. However in this implementation the grid is finite. A cell can be alive or dead. every cell relates to 8 of it's direct neighbors
+The game of life takes place in an infinite two dimensional grid of cells. However in this implementation the grid is finite. A cell can be alive or dead which can also be called populated and unpopulated. every cell relates to 8 of it's direct neighbors.
 <p align="center">
   <img src="grid.png" alt="drawing" width="200" text-align="center"/>
 </p>
