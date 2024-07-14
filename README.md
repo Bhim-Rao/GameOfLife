@@ -4,8 +4,5 @@ A rust implementation of Conway's game of life using macroquad
 Clone the Repo and then run:
 ```
 cargo build
-```
-and
-```
 cargo run
 ```
