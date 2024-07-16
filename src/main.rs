@@ -8,6 +8,7 @@ const STEP: f32 = 5.0;
 async fn main() {
     let w_i = (screen_width()/STEP) as i32;
     let h_i = (screen_height()/STEP) as i32;
+    let background = Color::from_hex(0x0f0f0f);
     let mut g = grid();
     let mut mouse_x;
     let mut mouse_y;
@@ -22,7 +23,6 @@ async fn main() {
     loop {
         let now = Instant::now();
         ng = grid();
-        let background = Color::from_hex(0x0f0f0f);
         clear_background(background);
         if is_mouse_button_down(MouseButton::Left) {
             (mouse_x,mouse_y) = mouse_position();
