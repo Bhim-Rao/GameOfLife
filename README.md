@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="example.png" alt="drawing" width="300" text-align="center"/>
+</p>
 # Conway's Game of Life
 A rust implementation of Conway's game of life using macroquad
 ## Build Instructions
