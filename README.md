@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="example.png" alt="drawing" width="300" text-align="center"/>
+  <img src="example.png" alt="drawing" width="400" text-align="center"/>
 </p>
 
 # Conway's Game of Life
