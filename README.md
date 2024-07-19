@@ -18,7 +18,8 @@ The game of life takes place in an infinite two dimensional grid of cells. Howev
 <p align="center">
   <img src="grid.png" alt="drawing" width="200" text-align="center"/>
 </p>
-Rules:
+
+### Rules:
 
 - if the cell is alive and has < 2 live neighbors it dies
 - if the cell is alive and has exactly 2 or 3 live neighbors it lives
